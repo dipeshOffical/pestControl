@@ -30,7 +30,7 @@ function HeroSection() {
                         />
 
                         <Button
-                            text={" Get Start Now"}
+                            text={" View All Services"}
                             style={"bg-[#0A3ADA1A] border-2 border-white  hover:bg-yellow-500 text-white"}
                         />
                     </div>
