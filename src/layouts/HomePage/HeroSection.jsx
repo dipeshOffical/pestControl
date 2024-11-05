@@ -2,6 +2,7 @@ import Button from "../../components/Button"
 import heroImage from '../../assets/heroImage.png'
 import mice from '../../assets/mice.png'
 import turnarrow from '../../assets/turnarrow.png'
+import { Link } from "react-router-dom"
 function HeroSection() {
     return (
         <div className="bg-primary min-h-[600px] relative overflow-hidden">
@@ -16,7 +17,7 @@ function HeroSection() {
                             #01 Pest Control & Cleaning Service
                         </span>
                     </div>
-                    <h1 className="mt-6 text-2xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight">
+                    <h1 className="mt-6 text-2xl sm:text-5xl border-transparent lg:text-6xl font-bold text-white leading-tight">
                         A Cleaner, Safer Environment Starts Here
                     </h1>
                     <p className="mt-6 text-lg text-blue-100/80">
@@ -24,14 +25,17 @@ function HeroSection() {
                         lorem. Nunc felis eros pretium semper augue. In pharetra condimentum.
                     </p>
                     <div className="mt-8 flex flex-wrap gap-4">
+                        <Link to={'/booking '}>
                         <Button
                             text={" Get Start Now"}
-                            style={"bg-yellow-400 hover:bg-yellow-500 text-white"}
+                            style={"bg-yellow-400 border-2  border-transparent hover:bg-yellow-500 text-white"}
                         />
+                        </Link>
+                        
 
                         <Button
                             text={" View All Services"}
-                            style={"bg-[#0A3ADA1A] border-2 border-white  hover:bg-yellow-500 text-white"}
+                            style={"bg-[#0A3ADA1A] border-2 border-white  hover:bg-yellow-400 text-white"}
                         />
                     </div>
                 </div>
