@@ -1,6 +1,9 @@
 import Footer from "./components/Footer"
 import Header from "./components/Header"
-import HomePage from "./pages/HomePage"
+import BookingPage from "./pages/BookingPage"
+// import HomePage from "./pages/HomePage"
+
+
 
 
 function App() {
@@ -8,7 +11,8 @@ function App() {
   return (
     <div  className="font-poppins">
       <Header/>
-      <HomePage/>
+      {/* <HomePage/> */}
+      <BookingPage/>
       <Footer/>
     </div>
   )
