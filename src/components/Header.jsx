@@ -1,13 +1,11 @@
 
-// import { Button } from "@/components/ui/button"
-// import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
-// import {  Facebook, Instagram} from "lucide-react"
 import insta from '../assets/insta.png'
 import linkedin from '../assets/linkedin.png'
 import facebook from '../assets/facebook.png'
 import logo from '../assets/logo.png'
+
 export default function Header() {
- 
+  
   const navLinks = [
     { href: "/", label: "Home" },
     { href: "/about", label: "About us" },

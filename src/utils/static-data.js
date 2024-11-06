@@ -62,5 +62,41 @@ export const services = [
       date: "JAN 6, 2025",
       title: "The Benefits of Regular Professional Cleaning",
       excerpt: "Understand the numerous advantages of scheduling regular professional cleanings. From improving indoor air..."
-    }
+    },
+    {
+      image:blogImage,
+      date: "JAN 6, 2025",
+      title: "The Benefits of Regular Professional Cleaning",
+      excerpt: "Understand the numerous advantages of scheduling regular professional cleanings. From improving indoor air..."
+    },
+    {
+      image:blogImage,
+      date: "JAN 6, 2025",
+      title: "The Benefits of Regular Professional Cleaning",
+      excerpt: "Understand the numerous advantages of scheduling regular professional cleanings. From improving indoor air..."
+    },
+    {
+      image:blogImage,
+      date: "JAN 6, 2025",
+      title: "The Benefits of Regular Professional Cleaning",
+      excerpt: "Understand the numerous advantages of scheduling regular professional cleanings. From improving indoor air..."
+    },
+    {
+      image:blogImage,
+      date: "JAN 6, 2025",
+      title: "The Benefits of Regular Professional Cleaning",
+      excerpt: "Understand the numerous advantages of scheduling regular professional cleanings. From improving indoor air..."
+    },
+    {
+      image:blogImage,
+      date: "JAN 6, 2025",
+      title: "The Benefits of Regular Professional Cleaning",
+      excerpt: "Understand the numerous advantages of scheduling regular professional cleanings. From improving indoor air..."
+    },
+    {
+      image:blogImage,
+      date: "JAN 6, 2025",
+      title: "The Benefits of Regular Professional Cleaning",
+      excerpt: "Understand the numerous advantages of scheduling regular professional cleanings. From improving indoor air..."
+    },
   ];
