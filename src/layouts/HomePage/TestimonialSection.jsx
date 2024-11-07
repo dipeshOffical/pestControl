@@ -1,48 +1,12 @@
 
 import { TestimonialCard } from "../../components/TestimonialCard";
-import testimonialImage from '../../assets/testimonialImage.png'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
+import { testimonials } from "../../utils/static-data";
 const TestimonialSection = () => {
-    const testimonials = [
-      {
-        image: testimonialImage,
-        name: "Courtney Henry",
-        role: "Nursing Assistant",
-        review: "Aliqua id fugiat nostrud irure ex duis ea quis quis ad et. Sunt qui esse pariatur duis deserunt mollit dolore cillum minim tempor enim.",
-        rating: 4
-      },
-      {
-        image: testimonialImage,
-        name: "Courtney Henry",
-        role: "Nursing Assistant",
-        review: "Aliqua id fugiat nostrud irure ex duis ea quis quis ad et. Sunt qui esse pariatur duis deserunt mollit dolore cillum minim tempor enim.",
-        rating: 4
-      },
-      {
-        image:testimonialImage,
-        name: "Courtney Henry",
-        role: "Nursing Assistant",
-        review: "Aliqua id fugiat nostrud irure ex duis ea quis quis ad et. Sunt qui esse pariatur duis deserunt mollit dolore cillum minim tempor enim.",
-        rating: 4
-      },
-      {
-        image: testimonialImage,
-        name: "Courtney Henry",
-        role: "Nursing Assistant",
-        review: "Aliqua id fugiat nostrud irure ex duis ea quis quis ad et. Sunt qui esse pariatur duis deserunt mollit dolore cillum minim tempor enim.",
-        rating: 4
-      }, {
-        image:testimonialImage,
-        name: "Courtney Henry",
-        role: "Nursing Assistant",
-        review: "Aliqua id fugiat nostrud irure ex duis ea quis quis ad et. Sunt qui esse pariatur duis deserunt mollit dolore cillum minim tempor enim.",
-        rating: 4
-      },
-      // Add more testimonials as needed
-    ];
+    
   
     return (
       <div className="max-w-7xl mx-auto px-4 py-16 sm:px-6 lg:px-8">

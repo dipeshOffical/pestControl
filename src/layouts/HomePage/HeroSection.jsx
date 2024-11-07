@@ -6,8 +6,6 @@ import { Link } from "react-router-dom"
 function HeroSection() {
     return (
         <div className="bg-primary min-h-[600px] relative overflow-hidden">
-            {/* Mouse decoration */}
-
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 flex flex-col lg:flex-row items-center justify-between">
                 {/* Left content */}

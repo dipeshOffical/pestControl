@@ -1,4 +1,5 @@
 import React from 'react';
+import { stats } from '../../utils/static-data';
 
 const StatItem = ({ number, label }) => (
   <div className="flex flex-col items-center justify-center px-4 md:px-8">
@@ -17,24 +18,7 @@ const StatItem = ({ number, label }) => (
 );
 
 const StatsBar = () => {
-  const stats = [
-    {
-      number: "567+",
-      label: "Happy Customers"
-    },
-    {
-      number: "48",
-      label: "Team Members"
-    },
-    {
-      number: "26",
-      label: "Award Winning"
-    },
-    {
-      number: "759+",
-      label: "Project Complete"
-    }
-  ];
+ 
 
   return (
     <div className="w-full bg-primary">

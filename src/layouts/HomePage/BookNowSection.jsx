@@ -1,4 +1,5 @@
 
+import { Link } from 'react-router-dom';
 import BookNowImage from '../../assets/bookNowImage.png'
 
 const BookNowSection = () => {
@@ -27,13 +28,19 @@ const BookNowSection = () => {
             </p>
             
             <div className="flex flex-wrap gap-4">
-              <button className="px-6 py-3 bg-yellow-400 hover:bg-yellow-500 text-white font-semibold rounded-lg transition-colors duration-200">
-                Book Service Now
-              </button>
+              <Link to={'/booking'}>
+                <button className="px-6 py-3 bg-yellow-400 hover:bg-yellow-500 text-white font-semibold rounded-lg transition-colors duration-200">
+                  Book Service Now
+                </button>
+              
+              </Link>
+              <Link to={'/about'}>
+                <button className="px-6 py-3 bg-transparent border-2 border-white text-white hover:bg-white/10 font-semibold rounded-lg transition-colors duration-200">
+                  Know About Us
+                </button>
+              
+              </Link>
 
-              <button className="px-6 py-3 bg-transparent border-2 border-white text-white hover:bg-white/10 font-semibold rounded-lg transition-colors duration-200">
-                Know About Us
-              </button>
             </div>
           </div>
 

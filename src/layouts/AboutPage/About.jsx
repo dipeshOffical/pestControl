@@ -1,5 +1,4 @@
-import React from 'react';
-import MissionStatement from './MissionStatement';
+
 import ImageSection from './ImageSection';
 
 const Layout = () => {

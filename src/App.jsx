@@ -8,12 +8,13 @@ import ServicePage from "./pages/ServicePage"
 import BlogPage from "./pages/BlogPage"
 
 
-
 function App() {
 
   return (
     <div className="font-poppins">
+
       <Header />
+   
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/booking" element={<BookingPage />} />

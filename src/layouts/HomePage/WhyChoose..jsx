@@ -2,6 +2,7 @@ import { Check } from "lucide-react"
 import Button from "../../components/Button"
 import whyChoose1 from '../../assets/whyChoose1.png'
 import whyChoose2 from '../../assets/whyChoose2.png'
+import { Link } from "react-router-dom"
 
 export default function WhyChoose() {
   const features = [
@@ -19,7 +20,7 @@ export default function WhyChoose() {
         <div className="grid lg:grid-cols-2     gap-12 items-center">
           {/* Images */}
           <div className="relative ">
-          
+
             <div className="mx-auto max-w-[22rem] ">
               <img
                 src={whyChoose2}
@@ -70,9 +71,13 @@ export default function WhyChoose() {
 
               {/* Buttons */}
               <div className="flex flex-wrap gap-4">
-                <Button text={' Book Service Now'} style={"bg-yellow-400 hover:bg-yellow-500 text-white "}/>
-                 <Button text={' View all Services '} style={" border-2 border-gray-500  text-gray-900 hover:text-white hover:border-white hover:bg-yellow-400"}/>
-                               
+                <Link>
+                  <Button text={' Book Service Now'} style={"bg-yellow-400 hover:bg-yellow-500 text-white "} />
+                </Link>
+                <Link>
+                  <Button text={' View all Services '} style={" border-2 border-gray-500  text-gray-900 hover:text-white hover:border-white hover:bg-yellow-400"} />
+                </Link>
+
               </div>
             </div>
           </div>

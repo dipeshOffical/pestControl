@@ -2,6 +2,7 @@
 import { Phone, Mail, MapPin, ArrowRight } from "lucide-react"
 import Button from "./Button"
 import logo from '../assets/logo.png'
+import { Link } from "react-router-dom"
 
 export default function Footer() {
   return (
@@ -26,28 +27,28 @@ export default function Footer() {
             <h3 className="text-xl font-semibold mb-4">Company</h3>
             <ul className="space-y-3">
               <li>
-                <a
-                  href="/about"
+                <Link
+                  to={"/about"}
                   className="text-blue-100/80 hover:text-white transition-colors"
                 >
                   About Us
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="/services"
+                <Link
+                  to={"/services"}
                   className="text-blue-100/80 hover:text-white transition-colors"
                 >
                   Services
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="/blogs"
+                <Link
+                  to={"/blogs"}
                   className="text-blue-100/80 hover:text-white transition-colors"
                 >
                   Blogs
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -87,13 +88,13 @@ export default function Footer() {
               />
               <div>
                 <div className="relative w-[13rem]">
-                <Button text={'Subscribe'} style={"w-full bg-yellow-400 hover:bg-yellow-500 text-white flex items-center justify-center gap-2"}/>
-                
-                <ArrowRight className="h-7 w-7 absolute top-[.5rem] right-3 " />
+                  <Button text={'Subscribe'} style={"w-full bg-yellow-400 hover:bg-yellow-500 text-white flex items-center justify-center gap-2"} />
+
+                  <ArrowRight className="h-7 w-7 absolute top-[.5rem] right-3 " />
                 </div>
-              
+
               </div>
-              
+
             </div>
           </div>
         </div>

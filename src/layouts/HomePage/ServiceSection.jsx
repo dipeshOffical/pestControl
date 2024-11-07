@@ -2,9 +2,7 @@
 import ServiceCard from '../../components/ServiceCard';
 import { services } from '../../utils/static-data';
 
-
 const ServiceSection = () => {
- 
 
   return (
     <div className='bg-[#FAFAF8]'>   
@@ -17,8 +15,6 @@ const ServiceSection = () => {
           rodents, our experts handle it all, ensuring a pest-free environment you can rely on
         </p>
       </div>
-
-
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4  gap-14 ">
         {services.map((service, index) => (

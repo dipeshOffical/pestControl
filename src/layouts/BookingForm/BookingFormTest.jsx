@@ -1,87 +1,144 @@
-
 import emailjs from 'emailjs-com';
 import { useState } from 'react';
+import { storage } from '../../../firebaseConfig'; // Import Firebase Storage
+import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
+
+const MAX_FILE_SIZE = 2 * 1024 * 1024; // 2MB file size limit
 
 const BookingForm = () => {
     const [formData, setFormData] = useState({
-        to_name: 'Business Owner', // Fixed value for receiver's name
+        to_name: 'Business Owner',
         fullName: '',
         email: '',
         phone: '',
         address: '',
         serviceType: '',
-        propertyType: '',
         preferredDate: '',
+        propertyType: '',
         preferredTime: '',
         additionalInfo: '',
-        attachment:null
+        attachment: null,
     });
 
     const [formErrors, setFormErrors] = useState({});
-   
-    const handleInputChange = (e) => {
-        setFormData({ ...formData, [e.target.name]: e.target.value });
+
+    // Function to upload file to Firebase Storage
+    //   const uploadFileToFirebase = async (file) => {
+    //     const storageRef = storage.ref();
+    //     const fileRef = storageRef.child(`uploads/${file.name}`);
+    //     try {
+    //       await fileRef.put(file);
+    //       const fileUrl = await fileRef.getDownloadURL();
+    //       console.log('File uploaded successfully. URL:', fileUrl);
+    //       return fileUrl;
+    //     } catch (error) {
+    //       console.error('Error uploading file:', error);
+    //       return null;
+    //     }
+    //   };
+
+    const uploadFileToFirebase = async (file) => {
+        try {
+            // Create a reference to the file in Firebase Storage
+            const storageRef = ref(storage, `your-folder/${file.name}`);
+
+            // Upload the file
+            const snapshot = await uploadBytes(storageRef, file);
+
+            // Get the file's download URL
+            const downloadURL = await getDownloadURL(snapshot.ref);
+            console.log("File available at:", downloadURL);
+
+            return downloadURL; // return URL if needed
+        } catch (error) {
+            console.error("Error uploading file:", error);
+        }
     };
+
 
     const validateForm = () => {
         const errors = {};
-
-        // Validation for each field
-        if (!formData.fullName) errors.fullName = "Full Name is required.";
-        if (!formData.email) {
-            errors.email = "Email is required.";
-        } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
-            errors.email = "Email is invalid.";
-        }
-
-        if (!formData.phone) {
-            errors.phone = "Phone Number is required.";
-        } else if (!/^\d{10}$/.test(formData.phone)) {
-            errors.phone = "Phone Number must be 10 digits.";
-        }
-
-        if (!formData.address) errors.address = "Address is required.";
-        if (!formData.serviceType) errors.serviceType = "Service Type is required.";
-        if (!formData.propertyType) errors.propertyType = "Property Type is required.";
-        if (!formData.preferredDate) errors.preferredDate = "Preferred Date is required.";
-        if (!formData.preferredTime) errors.preferredTime = "Preferred Time is required.";
-
+        // if (!formData.fullName) errors.fullName = 'Full Name is required';
+        // if (!formData.email) errors.email = 'Email is required';
+        // if (!formData.phone) errors.phone = 'Phone Number is required';
+        // if (!formData.serviceType) errors.serviceType = 'Service Type is required';
+        // if (!formData.propertyType) errors.propertyType = 'Property Type is required';
+        // if (!formData.preferredDate) errors.preferredDate = 'Preferred Date is required';
+        // if (!formData.preferredTime) errors.preferredTime = 'Preferred Time is required';
         setFormErrors(errors);
         return Object.keys(errors).length === 0;
     };
 
-    const handleSubmit = (e) => {
+    // Handle form submission
+    const handleSubmit = async (e) => {
         e.preventDefault();
 
-        if (validateForm()) {
-            emailjs.send(
-                'service_oun9m7h',
-            'template_hwwnokj',
-            formData,
-            'VwYyLtrGzBqnT0e1b',
-            )
-                .then((result) => {
-                    console.log('Email sent successfully!', result.text);
-                    setFormData({
-                        to_name: 'Business Owner',
-                        fullName: '',
-                        email: '',
-                        phone: '',
-                        address: '',
-                        serviceType: '',
-                        propertyType: '',
-                        preferredDate: '',
-                        preferredTime: '',
-                        additionalInfo: ''
-                    });
-                    setFormErrors({});
-                })
-                .catch((error) => {
-                    console.error('Error sending email:', error.text);
-                })
-             
+        if (!validateForm()) {
+            alert('Please fill out all required fields.');
+            return;
         }
+
+        const file = formData.attachment;
+        let fileUrl = '';
+
+        if (file) {
+            if (file.size > MAX_FILE_SIZE) {
+                alert('File size exceeds the 2MB limit. Please select a smaller file.');
+                return;
+            }
+            if (!['image/jpeg', 'image/png', 'application/pdf'].includes(file.type)) {
+                alert('Invalid file type. Only JPEG, PNG, and PDF files are allowed.');
+                return;
+            }
+
+            fileUrl = await uploadFileToFirebase(file);
+
+            if (!fileUrl) {
+                alert('File upload failed. Please try again.');
+                return;
+            }
+        }
+
+        // Send the email with form data and file URL
+        emailjs
+            .send(
+                'service_oun9m7h',       // Your EmailJS service ID
+                'template_hwwnokj',      // Your EmailJS template ID
+                {
+                    ...formData,
+                    file_link: fileUrl,    // Include the file URL in the email data
+                },
+                'VwYyLtrGzBqnT0e1b'      // Your EmailJS user ID
+            )
+            .then((result) => {
+                console.log('Email sent successfully!', result.text);
+                setFormData({
+                    to_name: 'Business Owner',
+                    fullName: '',
+                    email: '',
+                    phone: '',
+                    address: '',
+                    serviceType: '',
+                    propertyType: '',
+                    preferredDate: '',
+                    preferredTime: '',
+                    additionalInfo: '',
+                    attachment: null,
+                });
+                setFormErrors({});
+            })
+            .catch((error) => {
+                console.error('Error sending email:', error.text);
+            });
     };
+
+    // Handle input changes
+    const handleInputChange = (e) => {
+        const { name, value } = e.target;
+        setFormData((prev) => ({ ...prev, [name]: value }));
+    };
+
+    // Handle file input change
     const handleFileChange = (e) => {
         setFormData((prev) => ({ ...prev, attachment: e.target.files[0] }));
     };
@@ -252,7 +309,6 @@ const BookingForm = () => {
                     />
                 </div>
 
-
             </form>
 
             <div className="flex justify-center">
@@ -264,12 +320,10 @@ const BookingForm = () => {
                     Submit
                 </button>
             </div>
-
         </div>
     );
 };
 
-
-
 export default BookingForm;
+
 
