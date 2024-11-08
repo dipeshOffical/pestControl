@@ -6,13 +6,13 @@ import { getStorage } from "firebase/storage";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyA4FDVa1TvjQNJyCZqdbDfwrzA_zA03lUo",
-  authDomain: "opalpestcontrol-bb11d.firebaseapp.com",
-  projectId: "opalpestcontrol-bb11d",
-  storageBucket: "gs://opalpestcontrol-bb11d.firebasestorage.app", // Corrected storage bucket URL
-  messagingSenderId: "375581975308",
-  appId: "1:375581975308:web:4215b996709710236ddf29",
-  measurementId: "G-VX47BZ1KEQ",
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_FIREBASE_APP_ID,
+  measurementId: import.meta.env.VITE_FIREBASE_MEASUREMENT_ID,
 };
 
 // Initialize Firebase
