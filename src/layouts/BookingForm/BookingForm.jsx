@@ -1,10 +1,12 @@
 
-import emailjs from 'emailjs-com';
 import { useState } from 'react';
+import { getStorage, ref, uploadBytes, getDownloadURL } from "firebase/storage";
+import emailjs from "emailjs-com";
+import { storage } from "../../../firebaseConfig";
 
 const BookingForm = () => {
     const [formData, setFormData] = useState({
-        to_name: 'Business Owner', // Fixed value for receiver's name
+        to_name: 'Business Owner',
         fullName: '',
         email: '',
         phone: '',
@@ -14,19 +16,76 @@ const BookingForm = () => {
         preferredDate: '',
         preferredTime: '',
         additionalInfo: '',
-        attachment:null
+        attachment: null
     });
-
     const [formErrors, setFormErrors] = useState({});
-   
-    const handleInputChange = (e) => {
-        setFormData({ ...formData, [e.target.name]: e.target.value });
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+
+        if (validateForm()) {
+            try {
+                let imageUrl = "";
+                console.log(formData.attachment);
+
+                // Check if there is an attachment
+                if (formData.attachment) {
+                    // Initialize Firebase Storage
+                    const storage = getStorage();
+                    const storageRef = ref(storage,` attachments / ${ formData.attachment.name }`);
+
+                    // Upload the file to Firebase Storage
+                    const snapshot = await uploadBytes(storageRef, formData.attachment);
+                    console.log("File uploaded successfully:", snapshot);
+
+                    // Get the download URL of the uploaded file
+                    imageUrl = await getDownloadURL(storageRef);
+                    console.log("File URL:", imageUrl);
+                }
+
+           
+
+                // Send email using EmailJS
+               await emailjs.send(
+                    'service_oun9m7h',       // Your EmailJS service ID
+                    'template_hwwnokj', // Replace with your EmailJS template ID
+                                   {
+                    ...formData,
+                    imageUrl: imageUrl,    // Include the file URL in the email data
+                },
+                    'VwYyLtrGzBqnT0e1b' // Replace with your EmailJS public key
+                )
+                    .then((response) => {
+                        console.log("Email sent successfully:", response);
+                        alert("Mail sent successfully");
+
+                        // Reset form data if needed
+                        setFormData({
+                            fullName: '',
+                            email: '',
+                            phone: '',
+                            address: '',
+                            serviceType: '',
+                            propertyType: '',
+                            preferredDate: '',
+                            preferredTime: '',
+                            additionalInfo: '',
+                            attachment: null,
+                        });
+                        setFormErrors({});
+                    })
+                    .catch((error) => {
+                        console.error("Error sending email:", error);
+                    });
+            } catch (error) {
+                console.error("Error handling the attachment or email:", error);
+            }
+        }
     };
 
     const validateForm = () => {
         const errors = {};
 
-        // Validation for each field
         if (!formData.fullName) errors.fullName = "Full Name is required.";
         if (!formData.email) {
             errors.email = "Email is required.";
@@ -50,40 +109,13 @@ const BookingForm = () => {
         return Object.keys(errors).length === 0;
     };
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-
-        if (validateForm()) {
-            emailjs.send(
-                'service_oun9m7h',
-            'template_hwwnokj',
-            formData,
-            'VwYyLtrGzBqnT0e1b',
-            )
-                .then((result) => {
-                    console.log('Email sent successfully!', result.text);
-                    setFormData({
-                        to_name: 'Business Owner',
-                        fullName: '',
-                        email: '',
-                        phone: '',
-                        address: '',
-                        serviceType: '',
-                        propertyType: '',
-                        preferredDate: '',
-                        preferredTime: '',
-                        additionalInfo: ''
-                    });
-                    setFormErrors({});
-                })
-                .catch((error) => {
-                    console.error('Error sending email:', error.text);
-                })
-             
-        }
-    };
     const handleFileChange = (e) => {
         setFormData((prev) => ({ ...prev, attachment: e.target.files[0] }));
+    };
+
+    const handleInputChange = (e) => {
+        const { name, value } = e.target;
+        setFormData((prev) => ({ ...prev, [name]: value }));
     };
 
     return (
@@ -91,7 +123,7 @@ const BookingForm = () => {
             <h2 className="text-2xl font-bold mb-6 text-center">
                 Fill The Form For Booking The Service
             </h2>
-            <form className="bg-[#F3F5FD] md:grid grid-cols-2 gap-6">
+            <form onSubmit={handleSubmit} className="bg-[#F3F5FD] md:grid grid-cols-2 gap-6">
                 <div className="mb-6">
                     <label htmlFor="fullName" className="block mb-2 text-sm font-medium text-gray-700">
                         Full Name
@@ -102,7 +134,7 @@ const BookingForm = () => {
                         name="fullName"
                         value={formData.fullName}
                         onChange={handleInputChange}
-                        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                        className="w-full px-3 py-2 border border-gray-300 rounded-md"
                         placeholder="Enter your full name"
                     />
                     {formErrors.fullName && <p className="text-red-500 text-xs">{formErrors.fullName}</p>}
@@ -237,8 +269,9 @@ const BookingForm = () => {
                         className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                         placeholder="Enter any additional information"
                     />
-                    {formErrors.additionalInfo && <p className="text-red-500 text-xs">{formErrors.additionalInfo}</p>}
+                
                 </div>
+                
                 <div className="mb-6">
                     <label htmlFor="attachment" className="block mb-2 text-sm font-medium text-gray-700">
                         Upload Attachment
@@ -248,28 +281,21 @@ const BookingForm = () => {
                         id="attachment"
                         name="attachment"
                         onChange={handleFileChange}
-                        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                        className="w-full px-3 py-2 border border-gray-300 rounded-md"
                     />
                 </div>
 
-
+                <div className="flex justify-center col-span-2">
+                    <button
+                        type="submit"
+                        className="bg-yellow-500 hover:bg-yellow-600 text-white font-medium py-2 px-6 rounded-md"
+                    >
+                        Submit
+                    </button>
+                </div>
             </form>
-
-            <div className="flex justify-center">
-                <button
-                    type="submit"
-                    className="bg-yellow-500 hover:bg-yellow-600 text-white font-medium py-2 px-6 rounded-md"
-                    onClick={handleSubmit}
-                >
-                    Submit
-                </button>
-            </div>
-
         </div>
     );
 };
 
-
-
 export default BookingForm;
-

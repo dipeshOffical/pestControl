@@ -1,0 +1,8 @@
+[
+    {
+      "origin": ["http://localhost:5173","https://scaling-barnacle-jj56g6v9g5xwfp45p.github.dev/"],
+      "method": ["GET", "POST", "PUT", "DELETE"],
+      "maxAgeSeconds": 3600,
+      "responseHeader": ["Content-Type", "Authorization"]
+    }
+  ]
