@@ -44,7 +44,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  to={"/blogs"}
+                  to={"/blog"}
                   className="text-blue-100/80 hover:text-white transition-colors"
                 >
                   Blogs

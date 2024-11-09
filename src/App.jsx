@@ -6,11 +6,7 @@ import HomePage from "./pages/HomePage"
 import AboutPage from "./pages/AboutPage"
 import ServicePage from "./pages/ServicePage"
 import BlogPage from "./pages/BlogPage"
-  // import cors from 'cors';
-  // import express from 'express';
-
-  // const app = express();
-  // app.use(cors())
+import ContactPage from "./pages/ContactPage"
 
 function App() {
 
@@ -24,8 +20,8 @@ function App() {
         <Route path="/booking" element={<BookingPage />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/services" element={<ServicePage />} />
-        <Route path="/blog" element={<BlogPage />} />
-
+        <Route path="/blog" element={<BlogPage />} /> 
+        <Route path="/contact" element={<ContactPage />} /> 
       </Routes>
       <Footer />
     </div>

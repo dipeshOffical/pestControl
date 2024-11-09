@@ -32,8 +32,8 @@ const BookingForm = () => {
                 if (formData.attachment) {
                     // Initialize Firebase Storage
                     const storage = getStorage();
-                    const storageRef = ref(storage,` attachments / ${ formData.attachment.name }`);
-
+                    // const storageRef = ref(storage,`attachments / ${ formData.attachment.name }`);
+                    const storageRef = ref(storage, `attachments/${formData.attachment.name}`);
                     // Upload the file to Firebase Storage
                     const snapshot = await uploadBytes(storageRef, formData.attachment);
                     console.log("File uploaded successfully:", snapshot);
