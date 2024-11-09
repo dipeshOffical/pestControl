@@ -1,9 +1,6 @@
 
 import { useState } from 'react';
-import { getStorage, ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import emailjs from "emailjs-com";
-import { storage } from "../../../firebaseConfig";
-
 const BookingForm = () => {
     const [formData, setFormData] = useState({
         to_name: 'Business Owner',
@@ -16,7 +13,6 @@ const BookingForm = () => {
         preferredDate: '',
         preferredTime: '',
         additionalInfo: '',
-        attachment: null
     });
     const [formErrors, setFormErrors] = useState({});
 
@@ -25,23 +21,6 @@ const BookingForm = () => {
 
         if (validateForm()) {
             try {
-                let imageUrl = "";
-                console.log(formData.attachment);
-
-                // Check if there is an attachment
-                if (formData.attachment) {
-                    // Initialize Firebase Storage
-                    const storage = getStorage();
-                    // const storageRef = ref(storage,`attachments / ${ formData.attachment.name }`);
-                    const storageRef = ref(storage, `attachments/${formData.attachment.name}`);
-                    // Upload the file to Firebase Storage
-                    const snapshot = await uploadBytes(storageRef, formData.attachment);
-                    console.log("File uploaded successfully:", snapshot);
-
-                    // Get the download URL of the uploaded file
-                    imageUrl = await getDownloadURL(storageRef);
-                    console.log("File URL:", imageUrl);
-                }
 
            
 
@@ -49,10 +28,7 @@ const BookingForm = () => {
                await emailjs.send(
                     'service_oun9m7h',       // Your EmailJS service ID
                     'template_hwwnokj', // Replace with your EmailJS template ID
-                                   {
-                    ...formData,
-                    imageUrl: imageUrl,    // Include the file URL in the email data
-                },
+                     formData,
                     'VwYyLtrGzBqnT0e1b' // Replace with your EmailJS public key
                 )
                     .then((response) => {
@@ -70,7 +46,6 @@ const BookingForm = () => {
                             preferredDate: '',
                             preferredTime: '',
                             additionalInfo: '',
-                            attachment: null,
                         });
                         setFormErrors({});
                     })
@@ -109,9 +84,7 @@ const BookingForm = () => {
         return Object.keys(errors).length === 0;
     };
 
-    const handleFileChange = (e) => {
-        setFormData((prev) => ({ ...prev, attachment: e.target.files[0] }));
-    };
+
 
     const handleInputChange = (e) => {
         const { name, value } = e.target;
@@ -270,19 +243,6 @@ const BookingForm = () => {
                         placeholder="Enter any additional information"
                     />
                 
-                </div>
-                
-                <div className="mb-6">
-                    <label htmlFor="attachment" className="block mb-2 text-sm font-medium text-gray-700">
-                        Upload Attachment
-                    </label>
-                    <input
-                        type="file"
-                        id="attachment"
-                        name="attachment"
-                        onChange={handleFileChange}
-                        className="w-full px-3 py-2 border border-gray-300 rounded-md"
-                    />
                 </div>
 
                 <div className="flex justify-center col-span-2">
