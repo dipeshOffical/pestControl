@@ -31,13 +31,15 @@ export default function Header() {
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             {navLinks.map((link) => (
-              <Link
+              <NavLink
                 key={link.label}
                 to={link.href}
-                className="text-sm lg:text-lg font-medium  hover:text-gray-900 transition-colors"
+                className={({ isActive }) =>
+                  isActive ? 'text-red-500  hover:text-gray-600 transition-colors block py-2' : 'text-gray-800 hover:text-gray-600 transition-colors block py-2 '
+                }
               >
                 {link.label}
-              </Link>
+              </NavLink>
             ))}
           </div>
           <div onClick={toggleMenu} className=' md:hidden'>
