@@ -17,7 +17,7 @@ const BookNowSection = () => {
               Schedule Your Service With
             </h2>
             <h2 className="text-3xl md:text-4xl font-bold text-red-500 leading-tight mb-8">
-              SafeNest
+              Opal
             </h2>
             
             <p className="text-blue-100 text-base lg:text-lg mb-8 max-w-lg">

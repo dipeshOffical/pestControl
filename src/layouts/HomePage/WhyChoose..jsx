@@ -6,12 +6,12 @@ import { Link } from "react-router-dom"
 
 export default function WhyChoose() {
   const features = [
-    "Vetted professionals",
+    "Australian-Approved Products",
     "Affordable Prices",
-    "Next day availability",
-    "Best Quality",
+    " Safe for Families and Pets",
+    "Proven Track Record",
     "Standard cleaning tasks",
-    "Affordable Prices",
+    "Long-Term Prevention",
   ]
 
   return (
@@ -41,17 +41,15 @@ export default function WhyChoose() {
           <div className="lg:pl-8 pt-4 ">
             <div className="space-y-6 max-w-2xl">
               <div className="inline-block">
-                <span className="text-red-primary font-medium">Why Choose Us</span>
+                <span className="text-red-primary font-medium">Why Choose Opal</span>
               </div>
 
               <h2 className="text-2xl md:text-4xl font-bold">
-                Your Trusted Partner In Clean And Safe Spaces
+                Your Trusted Partner In Clean And Pest Control
               </h2>
 
               <p className="text-gray-600">
-                We make your space shine! Professional and reliable cleaning service
-                company providing top-notch solutions for homes and businesses.
-                Satisfaction guaranteed!
+              Opal Pest Control & Cleaning Services is the go-to choice for anyone seeking reliable and professional pest management. We stand out for our commitment to:
               </p>
 
               {/* Features Grid */}
@@ -71,10 +69,10 @@ export default function WhyChoose() {
 
               {/* Buttons */}
               <div className="flex flex-wrap gap-4">
-                <Link>
+                <Link to={'booking'}>
                   <Button text={' Book Service Now'} style={"bg-yellow-400 hover:bg-yellow-500 text-white "} />
                 </Link>
-                <Link>
+                <Link to={'services'}>
                   <Button text={' View all Services '} style={" border-2 border-gray-500  text-gray-900 hover:text-white hover:border-white hover:bg-yellow-400"} />
                 </Link>
 

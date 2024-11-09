@@ -38,18 +38,9 @@ export default function Mission() {
             </h1>
             <div className="space-y-6 text-white/90">
               <p className="lg:text-lg">
-                At SafeNest Clean & Pest, we're dedicated to creating cleaner, safer
-                spaces. With years of experience in pest control and cleaning, we
-                deliver reliable, eco-friendly solutions tailored to each client's
-                needs. Our team is committed to using safe, non-toxic products and
-                methods that protect your home or business while ensuring effective
-                results.
+              At Opal Pest Control & Cleaning Services, we pride ourselves on delivering top-tier pest management solutions backed by years of experience in Australia. Our mission is to provide safe, effective, and environmentally friendly treatments that keep your spaces pest-free and hygienic. We offer a wide range of services designed to meet the unique needs of our customers, from residential homes to commercial businesses.
               </p>
-              <p className="lg:text-lg">
-                Whether you're dealing with pests or need a thorough clean, we're
-                here to help. Choose SafeNest for quality service, peace of mind, and
-                a space you'll love coming back to.
-              </p>
+             
             </div>
           </div>
         </div>

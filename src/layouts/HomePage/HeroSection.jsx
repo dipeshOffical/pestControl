@@ -12,29 +12,30 @@ function HeroSection() {
                 <div className="max-w-xl lg:max-w-2xl z-10">
                     <div className="inline-block">
                         <span className="bg-red-primary text-white px-4 py-1.5 rounded-full text-sm font-medium">
-                            #01 Pest Control & Cleaning Service
+                            Opal Pest Control & Cleaning – Bringing Australian Expertise to Nepal
                         </span>
                     </div>
                     <h1 className="mt-6 text-2xl sm:text-5xl border-transparent lg:text-6xl font-bold text-white leading-tight">
-                        A Cleaner, Safer Environment Starts Here
+                        Your Ultimate Solution for a Pest-Free, Clean Environment
                     </h1>
                     <p className="mt-6 text-lg text-blue-100/80">
-                        Suspendisse nunc vestibulum cras proin luctus lectus enim laoreet
-                        lorem. Nunc felis eros pretium semper augue. In pharetra condimentum.
+                        Trusted Australian expertise, eco-friendly products, comprehensive pest control and cleaning services.
+
                     </p>
                     <div className="mt-8 flex flex-wrap gap-4">
                         <Link to={'/booking '}>
-                        <Button
-                            text={" Get Start Now"}
-                            style={"bg-yellow-400 border-2  border-transparent hover:bg-yellow-500 text-white"}
-                        />
+                            <Button
+                                text={" Get Start Now"}
+                                style={"bg-yellow-400 border-2  border-transparent hover:bg-yellow-500 text-white"}
+                            />
                         </Link>
-                        
 
-                        <Button
-                            text={" View All Services"}
-                            style={"bg-[#0A3ADA1A] border-2 border-white  hover:bg-yellow-400 text-white"}
-                        />
+                        <Link to={'/services'}>
+                            <Button
+                                text={" View All Services"}
+                                style={"bg-[#0A3ADA1A] border-2 border-white  hover:bg-yellow-400 text-white"}
+                            />
+                        </Link>
                     </div>
                 </div>
 

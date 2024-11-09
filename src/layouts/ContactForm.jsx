@@ -1,5 +1,5 @@
 import emailjs from "emailjs-com";
-import { Clock, Mail, MapPin, Phone } from "lucide-react"
+import { Clock, Link, Mail, MapPin, Phone } from "lucide-react"
 import { useState } from "react";
 
 export default function ContactForm() {
@@ -65,7 +65,9 @@ export default function ContactForm() {
 
   return (
     <div className="w-full max-w-6xl mx-auto p-4">
-      <div className="grid md:grid-cols-2 gap-8 rounded-lg overflow-hidden">
+      <p className="max-w-3xl text-center font-semibold text-lg md:text-2xl py-6 mx-auto">Get in touch with Opal Pest Control & Cleaning Services today to book an appointment or learn more about our offerings.</p>
+      <div className="grid md:grid-cols-2  rounded-lg overflow-hidden">
+        
         {/* Contact Information Section */}
         <div className="bg-blue-900 p-8 text-white">
           <h2 className="text-2xl font-bold mb-8">Contact Information</h2>
@@ -75,21 +77,21 @@ export default function ContactForm() {
               <div className="bg-white/10 p-3 rounded-full">
                 <Phone className="h-6 w-6" />
               </div>
-              <span>02 1234 5678</span>
+              <span>078-590988 | 9802892378</span>
             </div>
 
             <div className="flex items-center gap-4">
               <div className="bg-white/10 p-3 rounded-full">
                 <Mail className="h-6 w-6" />
               </div>
-              <span>contact@.com.au</span>
+              <span>  info@opalpestandclean.com</span>
             </div>
 
             <div className="flex items-center gap-4">
               <div className="bg-white/10 p-3 rounded-full">
                 <MapPin className="h-6 w-6" />
               </div>
-              <span>Level 2, 28 Memorial Avenue, Liverpool NSW 2170</span>
+              <span>Chitwan | Nawalparasi, Nepal</span>
             </div>
 
             <div className="flex items-center gap-4">
@@ -103,14 +105,8 @@ export default function ContactForm() {
           <div className="mt-12">
             <p className="mb-4">follow us on Social media:</p>
             <div className="flex gap-4">
-              <a href="#" className="hover:opacity-80">
-                <div className="bg-white/10 p-2 rounded-full">
-                  <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" />
-                  </svg>
-                </div>
-              </a>
-              <a href="#" className="hover:opacity-80">
+              
+              <a href='https://www.facebook.com/people/Opal-Pest-Control-Cleaning/61568205753687/?mibextid=LQQJ4d' className="hover:opacity-80">
                 <div className="bg-white/10 p-2 rounded-full">
                   <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M12 2C6.477 2 2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12c0-5.523-4.477-10-10-10z" />
@@ -140,7 +136,7 @@ export default function ContactForm() {
               <input
                 id="fullName"
                 name='fullName'
-                className="w-full"
+                className="w-full rounded-lg px-4 py-1"
                 value={formData.fullName}
                 onChange={handleInputChange}
               />
@@ -155,7 +151,7 @@ export default function ContactForm() {
                 id="email"
                 type="email"
                 name='email'
-                className="w-full"
+                className="w-full rounded-lg px4 py-1"
                 value={formData.email}
                 onChange={handleInputChange}
               />
@@ -169,19 +165,21 @@ export default function ContactForm() {
               <textarea
                 id="message"
                 name='message'
-                className="min-h-[150px] w-full"
+                className="min-h-[150px] w-full rounded-xl p-2"
                 value={formData.message}
                 onChange={handleInputChange}
               />
               {formErrors.message && <p className="text-red-500 text-xs">{formErrors.message}</p>}
             </div>
-
-            <button
-              type="submit"
-              className="w-full bg-yellow-500 hover:bg-yellow-600 text-white"
-            >
-              Submit
-            </button>
+<div className="w-full flex justify-center">
+  
+              <button
+                type="submit"
+                className="py-2 rounded-full px-6 bg-yellow-500 hover:bg-yellow-600 text-white"
+              >
+                Submit
+              </button>
+</div>
           </form>
         </div>
       </div>

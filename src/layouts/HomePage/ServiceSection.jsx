@@ -1,4 +1,5 @@
 
+import { Link } from 'react-router-dom';
 import ServiceCard from '../../components/ServiceCard';
 import { services } from '../../utils/static-data';
 
@@ -17,7 +18,7 @@ const ServiceSection = () => {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4  gap-14 ">
-        {services.map((service, index) => (
+        {services.slice(0,4).map((service, index) => (
           <ServiceCard
             key={index}
             icon={service.icon}
@@ -25,6 +26,13 @@ const ServiceSection = () => {
             description={service.description}
           />
         ))}
+      </div>
+      <div className='flex justify-center'>
+
+  <Link to={'/services'}>
+
+        <p className='mx-auto cursor-pointer my-6 font-bold border hover:border-white border-black  rounded-xl px-6 py-2  hover:bg-yellow-300 hover:text-white' >See More</p>
+  </Link>
       </div>
     </div>
     </div>

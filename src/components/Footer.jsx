@@ -16,10 +16,13 @@ export default function Footer() {
               alt="Safenest Logo"
               className="h-15 w-auto mb-6"
             />
-            <p className="text-blue-100/80 max-w-sm">
-              Stay updated with our latest cleaning tips, service updates, and
-              helpful articles on maintaining a spotless home.
+            <p className=" max-w-sm">
+            Opal Pest Control & Cleaning – “Your Ultimate Solution for a Pest-Free, Clean Environment”
             </p>
+            <ul>
+              <li>Trusted by hundreds of clients across Nepal</li>
+              <li>Australian standards, local expertise.</li>
+            </ul>
           </div>
 
           {/* Company Links */}
@@ -59,20 +62,20 @@ export default function Footer() {
             <ul className="space-y-3">
               <li className="flex items-center gap-2">
                 <Phone className="h-5 w-5 text-yellow-400" />
-                <span className="text-blue-100/80">+977 986 23 653 77</span>
+                <span className="text-blue-100/80">078-590988 | 9802892378</span>
               </li>
               <li className="flex items-center gap-2">
                 <Mail className="h-5 w-5 text-yellow-400" />
-                <a
-                  href="mailto:Safenest12@gmail.com"
+                <Link
+                  to={"info@opalpestandclean.com"}
                   className="text-blue-100/80 hover:text-white transition-colors"
                 >
-                  Safenest12@gmail.com
-                </a>
+                  info@opalpestandclean.com
+                </Link>
               </li>
               <li className="flex items-center gap-2">
                 <MapPin className="h-5 w-5 text-yellow-400" />
-                <span className="text-blue-100/80">Melbourne, Australia</span>
+                <span className="text-blue-100/80">Chitwan | Nawalparasi, Nepal</span>
               </li>
             </ul>
           </div>
@@ -101,7 +104,7 @@ export default function Footer() {
 
         {/* Copyright */}
         <div className="mt-4 pt-4 border-t-2 border-t-white border-blue-800/50 text-center text-blue-100/60">
-          <p>2024 "Safenest" All Rights Reserved</p>
+          <p>2024 "Opal" All Rights Reserved</p>
         </div>
       </div>
     </footer>
