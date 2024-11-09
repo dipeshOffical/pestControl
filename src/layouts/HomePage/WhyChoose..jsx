@@ -68,16 +68,14 @@ export default function WhyChoose() {
               </div>
 
               {/* Buttons */}
-              <div className="flex flex-wrap gap-4">
-                <Link to={'booking'}>
-                  <Button text={' Book Service Now'} style={"bg-yellow-400 hover:bg-yellow-500 text-white "} />
-                </Link>
+              
+            </div>
+            <div className="flex flex-wrap gap-4 mt-12">
                 <Link to={'services'}>
                   <Button text={' View all Services '} style={" border-2 border-gray-500  text-gray-900 hover:text-white hover:border-white hover:bg-yellow-400"} />
                 </Link>
 
               </div>
-            </div>
           </div>
         </div>
       </div>

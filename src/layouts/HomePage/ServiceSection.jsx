@@ -30,7 +30,6 @@ const ServiceSection = () => {
       <div className='flex justify-center'>
 
   <Link to={'/services'}>
-
         <p className='mx-auto cursor-pointer my-6 font-bold border hover:border-white border-black  rounded-xl px-6 py-2  hover:bg-yellow-300 hover:text-white' >See More</p>
   </Link>
       </div>

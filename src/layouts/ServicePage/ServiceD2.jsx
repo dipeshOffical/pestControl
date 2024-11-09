@@ -12,7 +12,7 @@ function ServiceD2() {
     ];
 
     return (
-        <section className={" bg-[#F2F5F8] p-8 md:p-16 lg:flex flex-row-reverse gap-6 lg:items-center lg:space-x-8"}>
+        <section className={" bg-[#F2F5F8]  p-8 md:p-16 lg:flex flex-row-reverse gap-6 lg:items-center lg:space-x-8"}>
             {/* Text Content */}
             <div className="lg:w-2/3">
                 <h2 className="text-3xl font-bold text-gray-900">Pest Control</h2>

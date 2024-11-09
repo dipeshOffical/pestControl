@@ -1,4 +1,5 @@
-import whyChoose2 from '../../assets/whyChoose2.png'
+
+import heroImage from '../../assets/heroImage.png'
 
 function ServiceDescription() {
   const cleaningServices = [
@@ -29,7 +30,7 @@ function ServiceDescription() {
           {/* Image */}
           <div className="lg:w-1/3 mt-8 lg:mt-0 ">
             <img
-              src={whyChoose2}
+              src={heroImage}
               alt="Pest Control Professional"
               className="rounded-lg mx-auto"
             />

@@ -1,4 +1,4 @@
-import { House, Sprout,  } from 'lucide-react';
+
 import blogImage from '../assets/blogImage.png'
 import insta from '../assets/insta.png'
 import linkedin from '../assets/linkedin.png'
@@ -6,12 +6,25 @@ import facebook from '../assets/facebook.png'
 import testimonialImage from '../assets/testimonialImage.png'
 import teamImage from '../assets/whyChoose1.png'
 
+import HouseCleaning from '../assets/HouseCleaning.jpeg'
+import Floor from '../assets/Floor.jpeg'
+import Cockroach from '../assets/Cockroach.jpeg'
+import CompleteCleaning from '../assets/Cockroach.jpeg'
+import Spider from '../assets/Spider.jpeg'
+import Rodent from '../assets/Rodent.jpeg'
+import Tiles from '../assets/Tiles.jpeg'
+import Bedbug from '../assets/Bedbug.jpeg'
+import Carpet from '../assets/Carpet.jpeg'
+import Sofa from '../assets/Sofa.jpeg'
+import Pest from '../assets/Pest.jpeg'
+
+
 export   const navLinks = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About us" },
   { href: "/services", label: "Service" },
   { href: "/blog", label: "Blog" },
-  { href: "/contact", label: "Contact" },
+  { href: "/contact", label: "Contact" }
 ]
 
 export const socialLinks = [
@@ -20,59 +33,60 @@ export const socialLinks = [
   { href: "https://linkedin.com", icon: linkedin, label: "LinkedIn" },
 ]
 
-export  const services = [
+
+export const services = [
   {
-    icon: House,
+    icon: HouseCleaning,
     title: "House Cleaning",
     description: "Comprehensive cleaning for a spotless and healthy living space."
   },
   {
-    icon: Sprout,
+    icon: Floor,
     title: "Floor Cleaning",
     description: "Specialized treatments to keep floors shiny and clean."
   },
   {
-    icon: Sprout,
+    icon: Cockroach,
     title: "Cockroach Control",
     description: "Swift and effective solutions to eliminate cockroach infestations."
   },
   {
-    icon: House,
+    icon: Bedbug,
     title: "Bedbug Treatment",
     description: "Sleep soundly with our guaranteed bedbug eradication services."
   },
   {
-    icon: Sprout,
+    icon: Spider,
     title: "Spider Control",
     description: "Comprehensive spider control to keep your home safe."
   },
   {
-    icon: Sprout,
+    icon: Rodent,
     title: "Rodent/Mice Control",
     description: "Safeguard your space from harmful rodents with our proven methods."
   },
   {
-    icon: Sprout,
+    icon: Pest,
     title: "General Pest Management",
     description: "Covering all common pests to maintain a healthy environment."
   },
   {
-    icon: Sprout,
+    icon: Tiles,
     title: "Tiles & Marble Cleaning and Polishing",
     description: "Enhance the shine and cleanliness of your floors."
   },
   {
-    icon: Sprout,
+    icon: Carpet,
     title: "Carpet and Gailaicha Cleaning",
     description: "Deep cleaning for carpets, ensuring a fresh appearance."
   },
   {
-    icon: Sprout,
+    icon: Sofa,
     title: "Sofa Cleaning",
     description: "Upholstery cleaning to remove stains and dirt effectively."
   },
   {
-    icon: Sprout,
+    icon: CompleteCleaning,
     title: "Complete Domestic & Commercial Cleaning",
     description: "Customized cleaning solutions for any space."
   }
