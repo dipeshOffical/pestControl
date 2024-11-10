@@ -35,7 +35,7 @@ export default function WhatWeStandFor() {
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold mb-4">What We Stand For</h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              Our core values define who we are and guide every service we deliver. At SafeNest, we're committed to excellence,
+              Our core values define who we are and guide every service we deliver. At Opal, we're committed to excellence,
               integrity, and a client-first approach to create spaces that are safe, clean, and truly cared for.
             </p>
           </div>

@@ -22,7 +22,7 @@ import bikash from '../assets/bikash.jpeg'
 import bhuwan from '../assets/bhuwan.jpeg'
 import aakash from '../assets/aakash.jpeg'
 import blog3 from '../assets/blog3.jpeg'
-import logo from '../assets/logo.jpeg'
+import blog1 from '../assets/blog1.jpeg'
 
 
 export   const navLinks = [
@@ -101,7 +101,7 @@ export const services = [
 
 export const blogPosts = [
   {
-    image: logo,
+    image: blog1,
     date: "JAN 6, 2024",
     title: "EXPERT TECHNICIANS:",
     excerpt: "Our team is trained to the highest standards to deiver quick and effective pest control"
@@ -162,39 +162,40 @@ export const blogPosts = [
       },
   ];
 
+
   export const testimonials = [
     {
       image: testimonialImage,
       name: "Ram Bahadar Thapa",
       role: "Nursing Assistant",
-      review: "Aliqua id fugiat nostrud irure ex duis ea quis quis ad et. Sunt qui esse pariatur duis deserunt mollit dolore cillum minim tempor enim.",
+      review: "Opal Pest Control & Cleaning offers exceptional service. Their attention to detail and commitment to customer satisfaction are evident. The team handled both cleaning and pest control for our restaurant, ensuring a safe and clean environment for our patrons. A big thank you to the Opal team!",
       rating: 4
     },
     {
       image: blogImage,
       name: "Courtney Henry",
       role: "Nursing Assistant",
-      review: "Aliqua id fugiat nostrud irure ex duis ea quis quis ad et. Sunt qui esse pariatur duis deserunt mollit dolore cillum minim tempor enim.",
+      review: "We had bedbugs for months and tried everything. Opal’s bedbug treatment was a game changer! They used safe, non-toxic products and explained each step of the process. Our home is now bedbug-free, and we couldn't be happier. Highly recommend their services!",
       rating: 5
     },
     {
       image: bikash,
       name: "Bikash Poudel",
       role: "Nursing Assistant",
-      review: "Aliqua id fugiat nostrud irure ex duis ea quis quis ad et. Sunt qui esse pariatur duis deserunt mollit dolore cillum minim tempor enim.",
+      review: "The team at Opal Pest Control was very responsive and knowledgeable. They took care of our rodent problem efficiently and gave us helpful tips for long-term prevention. It’s great to have a trustworthy pest control company in Nepal. Thank you, Opal!",
       rating: 4
     },
     {
       image: bhuwan,
       name: "Bhuwan Tiwari",
       role: "Nursing Assistant",
-      review: "Aliqua id fugiat nostrud irure ex duis ea quis quis ad et. Sunt qui esse pariatur duis deserunt mollit dolore cillum minim tempor enim.",
+      review: "Opal Pest Control & Cleaning did an outstanding job! We had a serious termite issue, and their team quickly handled it with professionalism. Their eco-friendly approach made me feel at ease, knowing it’s safe for my children and pets. Highly recommend their services!",
       rating: 5
     }, {
       image:aakash,
       name: "Aakash Tripathi",
       role: "Nursing Assistant",
-      review: "Aliqua id fugiat nostrud irure ex duis ea quis quis ad et. Sunt qui esse pariatur duis deserunt mollit dolore cillum minim tempor enim.",
+      review: "I was impressed by the thoroughness of Opal's cleaning team. They transformed our office space into a spotless, hygienic environment. Their pest control service was equally effective, and we’ve had no issues since. Excellent service and reliable staff!",
       rating: 4
     },
     // Add more testimonials as needed

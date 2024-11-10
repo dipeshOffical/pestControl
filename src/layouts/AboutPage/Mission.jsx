@@ -34,7 +34,7 @@ export default function Mission() {
           <div className="max-w-2xl  xl:max-w-4xl 2xl:max-w-6xl mx-auto text-center relative z-10">
             <h2 className="text-white text-lg mb-4">Our Mission</h2>
             <h1 className="text-white text-2xl md:text-4xl font-bold mb-8">
-              SafeNest Clean & Pest
+              Opal Clean & Pest
             </h1>
             <div className="space-y-6 text-white/90">
               <p className="lg:text-lg">
