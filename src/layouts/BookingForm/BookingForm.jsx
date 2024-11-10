@@ -9,11 +9,13 @@ const BookingForm = () => {
         phone: '',
         address: '',
         serviceType: '',
+        ServiceCategory: '',
         propertyType: '',
         preferredDate: '',
         preferredTime: '',
         additionalInfo: '',
     });
+    const [isCleaning, setIsCleaning] = useState(true)
     const [formErrors, setFormErrors] = useState({});
 
     const handleSubmit = async (e) => {
@@ -22,13 +24,13 @@ const BookingForm = () => {
         if (validateForm()) {
             try {
 
-           
+
 
                 // Send email using EmailJS
-               await emailjs.send(
+                await emailjs.send(
                     'service_oun9m7h',       // Your EmailJS service ID
                     'template_hwwnokj', // Replace with your EmailJS template ID
-                     formData,
+                    formData,
                     'VwYyLtrGzBqnT0e1b' // Replace with your EmailJS public key
                 )
                     .then((response) => {
@@ -42,6 +44,7 @@ const BookingForm = () => {
                             phone: '',
                             address: '',
                             serviceType: '',
+                            ServiceCategory: '',
                             propertyType: '',
                             preferredDate: '',
                             preferredTime: '',
@@ -76,6 +79,7 @@ const BookingForm = () => {
 
         if (!formData.address) errors.address = "Address is required.";
         if (!formData.serviceType) errors.serviceType = "Service Type is required.";
+        if (!formData.ServiceCategory) errors.ServiceCategory = " ServiceCategory is required.";
         if (!formData.propertyType) errors.propertyType = "Property Type is required.";
         if (!formData.preferredDate) errors.preferredDate = "Preferred Date is required.";
         if (!formData.preferredTime) errors.preferredTime = "Preferred Time is required.";
@@ -161,6 +165,29 @@ const BookingForm = () => {
                     {formErrors.address && <p className="text-red-500 text-xs">{formErrors.address}</p>}
                 </div>
 
+
+                <div className="mb-6">
+                    <label htmlFor="serviceCategory" className="block mb-2 text-sm font-medium text-gray-700">
+                        Service Category
+                    </label>
+                    <select
+                        id="serviceCategory"
+                        name="serviceCategory"
+                        value={formData.category}
+                        onChange={(e) => {
+                            const selectedCategory = e.target.value;
+                            handleInputChange(e);
+                            setIsCleaning(selectedCategory === "cleaning");
+                        }}
+                        className="w-full px-3 py-2 border bg-white border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                    >
+                        <option value="">Select Category</option>
+                        <option value="cleaning">Cleaning</option>
+                        <option value="pestControl">Pest Control</option>
+                    </select>
+                    {formErrors.category && <p className="text-red-500 text-xs">{formErrors.category}</p>}
+                </div>
+
                 <div className="mb-6">
                     <label htmlFor="serviceType" className="block mb-2 text-sm font-medium text-gray-700">
                         Service Type
@@ -173,12 +200,27 @@ const BookingForm = () => {
                         className="w-full px-3 py-2 border bg-white border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                     >
                         <option value="">Select Service Type</option>
-                        <option value="option1">Option 1</option>
-                        <option value="option2">Option 2</option>
-                        <option value="option3">Option 3</option>
+                        {isCleaning ? (
+                            <>
+                                <option value="houseCleaning">House Cleaning</option>
+                                <option value="tilesCleaning">Tiles & Marble Cleaning and Polishing</option>
+                                <option value="floorCleaning">Floor Cleaning</option>
+                                <option value="sofaCleaning">Sofa Cleaning</option>
+                                <option value="carpetCleaning">Carpet and Galaicha Cleaning</option>
+                            </>
+                        ) : (
+                            <>
+                                <option value="spiderControl">Spider Control</option>
+                                <option value="rodentControl">Rodent/Mice Control</option>
+                                <option value="cockroachControl">Cockroach Control</option>
+                                <option value="generalPest">General Pest Management</option>
+                                <option value="bedbugTreatment">Bedbug Treatment</option>
+                            </>
+                        )}
                     </select>
                     {formErrors.serviceType && <p className="text-red-500 text-xs">{formErrors.serviceType}</p>}
                 </div>
+                        
 
                 <div className="mb-6">
                     <label htmlFor="propertyType" className="block mb-2 text-sm font-medium text-gray-700">
@@ -192,9 +234,8 @@ const BookingForm = () => {
                         className="w-full px-3 py-2 border bg-white border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                     >
                         <option value="">Select Property Type</option>
-                        <option value="option1">Option 1</option>
-                        <option value="option2">Option 2</option>
-                        <option value="option3">Option 3</option>
+                        <option value="option1">Domestic</option>
+                        <option value="option2">Commercial</option>
                     </select>
                     {formErrors.propertyType && <p className="text-red-500 text-xs">{formErrors.propertyType}</p>}
                 </div>
@@ -242,7 +283,7 @@ const BookingForm = () => {
                         className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                         placeholder="Enter any additional information"
                     />
-                
+
                 </div>
 
                 <div className="flex justify-center col-span-2">
