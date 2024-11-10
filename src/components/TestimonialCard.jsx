@@ -13,7 +13,7 @@ export const TestimonialCard = ({ image, name, role, review, rating }) => (
         className="w-20 h-20 rounded-full object-cover mb-4"
       />
       <h3 className="text-xl font-semibold text-gray-900 mb-1">{name}</h3>
-      <p className="text-gray-600 mb-4">{role}</p>
+      {/* <p className="text-gray-600 mb-4">{role}</p> */}
       <p className="text-gray-700 mb-4 leading-relaxed">{review}</p>
       <div className="flex space-x-1">
         {[...Array(5)].map((_, index) => (

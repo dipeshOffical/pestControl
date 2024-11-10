@@ -1,11 +1,11 @@
 import emailjs from "emailjs-com";
-import { Clock, Link, Mail, MapPin, Phone } from "lucide-react"
+import { Clock, Mail, MapPin, Phone } from "lucide-react"
 import { useState } from "react";
 
 export default function ContactForm() {
 
   const [formData, setFormData] = useState({
-    to_name :'Admin',
+    to_name: 'Admin',
     fullName: '',
     email: '',
     message: '',
@@ -60,14 +60,14 @@ export default function ContactForm() {
   };
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-       setFormData((prev) => ({ ...prev, [name]: value }));
-  };  
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
 
   return (
-    <div className="w-full max-w-6xl mx-auto p-4">
+    <div className="w-full max-w-6xl mx-auto px-4 py-16">
       <p className="max-w-3xl text-center font-semibold text-lg md:text-2xl py-6 mx-auto">Get in touch with Opal Pest Control & Cleaning Services today to book an appointment or learn more about our offerings.</p>
       <div className="grid md:grid-cols-2  rounded-lg overflow-hidden">
-        
+
         {/* Contact Information Section */}
         <div className="bg-blue-900 p-8 text-white">
           <h2 className="text-2xl font-bold mb-8">Contact Information</h2>
@@ -105,7 +105,7 @@ export default function ContactForm() {
           <div className="mt-12">
             <p className="mb-4">follow us on Social media:</p>
             <div className="flex gap-4">
-              
+
               <a href='https://www.facebook.com/people/Opal-Pest-Control-Cleaning/61568205753687/?mibextid=LQQJ4d' className="hover:opacity-80">
                 <div className="bg-white/10 p-2 rounded-full">
                   <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
@@ -171,15 +171,15 @@ export default function ContactForm() {
               />
               {formErrors.message && <p className="text-red-500 text-xs">{formErrors.message}</p>}
             </div>
-<div className="w-full flex justify-center">
-  
+            <div className="w-full flex justify-center">
+
               <button
                 type="submit"
                 className="py-2 rounded-full px-6 bg-yellow-500 hover:bg-yellow-600 text-white"
               >
                 Submit
               </button>
-</div>
+            </div>
           </form>
         </div>
       </div>

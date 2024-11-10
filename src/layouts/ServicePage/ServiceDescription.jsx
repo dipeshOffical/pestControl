@@ -19,7 +19,7 @@ function ServiceDescription() {
             Our cleaning services complement our pest control offerings, providing a complete solution for a spotless home or business. </p>
     
             <h3 className="font-bold text-lg mt-8">Benefits</h3>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-4"> {cleaningServices.map((s, i) => (
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4"> {cleaningServices.map((s, i) => (
                         <div className="flex items-center space-x-2" key={i}>
                             <span className="text-red-500">✔</span>
                             <div>{s.title}</div>

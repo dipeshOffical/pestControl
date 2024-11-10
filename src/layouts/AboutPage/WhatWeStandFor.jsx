@@ -1,5 +1,5 @@
 import { Users, Shield, ArrowUpCircle, Leaf, Award } from "lucide-react"
-
+import standfor from '../../assets/standfor.jpeg'
 export default function WhatWeStandFor() {
     const values = [
         {
@@ -27,6 +27,7 @@ export default function WhatWeStandFor() {
           title: "Quality & Excellence",
           description: "We hold ourselves to the highest standards, ensuring each job is done thoroughly and effectively, down to the last detail.",
         },
+       
       ]
     
       return (
@@ -52,6 +53,17 @@ export default function WhatWeStandFor() {
                 <p className="text-white/90 group-hover:text-blue-900">{value.description}</p>
               </div>
             ))}
+             <div
+      
+                className={`bg-blue-900 hover:bg-yellow-400 rounded-lg p-8 text-center transition-all duration-300 ease-in-out  group`}
+              >
+                <div className="bg-yellow-400 group-hover:bg-white rounded-full w-16 h-16 mx-auto mb-6 flex items-center justify-center transition-colors duration-300 overflow-hidden ">
+                  <img src={standfor} alt="standfor" className="w-[20rem]" />
+                </div>
+                <h3 className="text-white font-semibold text-xl mb-4">Reliable and Timely Service</h3>
+                <p className="text-white/90 group-hover:text-blue-900">We pride ourselves on being dependable and prompt, ensuring that every service is delivered on schedule with consistent, high-quality results. Your satisfaction and time are our top priorities.</p>
+              </div>
+
           </div>
         </div>
       )

@@ -1,5 +1,6 @@
 
 import blogImage from '../assets/blogImage.png'
+import blog2 from '../assets/blog2.jpeg'
 import insta from '../assets/insta.png'
 import linkedin from '../assets/linkedin.png'
 import facebook from '../assets/facebook.png'
@@ -17,6 +18,11 @@ import Bedbug from '../assets/Bedbug.jpeg'
 import Carpet from '../assets/Carpet.jpeg'
 import Sofa from '../assets/Sofa.jpeg'
 import Pest from '../assets/Pest.jpeg'
+import bikash from '../assets/bikash.jpeg'
+import bhuwan from '../assets/bhuwan.jpeg'
+import aakash from '../assets/aakash.jpeg'
+import blog3 from '../assets/blog3.jpeg'
+import logo from '../assets/logo.jpeg'
 
 
 export   const navLinks = [
@@ -95,19 +101,19 @@ export const services = [
 
 export const blogPosts = [
   {
-    image: blogImage,
+    image: logo,
     date: "JAN 6, 2024",
-    title: "Eco-Friendly Pest Control: How We Keep Your Home Safe",
-    excerpt: "Learn about our commitment to using non-toxic, environmentally friendly products that are safe for your family and pets."
+    title: "EXPERT TECHNICIANS:",
+    excerpt: "Our team is trained to the highest standards to deiver quick and effective pest control"
   },
   {
-    image: blogImage,
+    image: blog2,
     date: "JAN 7, 2024",
-    title: "The Benefits of Regular Pest Control Services",
-    excerpt: "Discover why scheduling regular pest inspections and treatments can save you time, money, and stress in the long run."
+    title: "BRINGING AUSTRALIAN EXPERTISE TO NEPAL",
+    excerpt: "At Opal Cleaning Services, we are committed to offering the highest standard of pest control and cleaning solutions to homes and businesses across Nepal. With our roots in Australia and years of experience delivering world-class service, we are now bringing our trusted solutions to address Nepal's growing pest and hygiene challenges."
   },
   {
-    image: blogImage,
+    image: blog3,
     date: "JAN 8, 2024",
     title: "Expert Tips for Keeping Your Home Pest-Free",
     excerpt: "Our technicians share their best advice for preventing common pests from invading your space."
@@ -159,34 +165,34 @@ export const blogPosts = [
   export const testimonials = [
     {
       image: testimonialImage,
-      name: "Courtney Henry",
+      name: "Ram Bahadar Thapa",
       role: "Nursing Assistant",
       review: "Aliqua id fugiat nostrud irure ex duis ea quis quis ad et. Sunt qui esse pariatur duis deserunt mollit dolore cillum minim tempor enim.",
       rating: 4
     },
     {
-      image: testimonialImage,
+      image: blogImage,
       name: "Courtney Henry",
+      role: "Nursing Assistant",
+      review: "Aliqua id fugiat nostrud irure ex duis ea quis quis ad et. Sunt qui esse pariatur duis deserunt mollit dolore cillum minim tempor enim.",
+      rating: 5
+    },
+    {
+      image: bikash,
+      name: "Bikash Poudel",
       role: "Nursing Assistant",
       review: "Aliqua id fugiat nostrud irure ex duis ea quis quis ad et. Sunt qui esse pariatur duis deserunt mollit dolore cillum minim tempor enim.",
       rating: 4
     },
     {
-      image:testimonialImage,
-      name: "Courtney Henry",
+      image: bhuwan,
+      name: "Bhuwan Tiwari",
       role: "Nursing Assistant",
       review: "Aliqua id fugiat nostrud irure ex duis ea quis quis ad et. Sunt qui esse pariatur duis deserunt mollit dolore cillum minim tempor enim.",
-      rating: 4
-    },
-    {
-      image: testimonialImage,
-      name: "Courtney Henry",
-      role: "Nursing Assistant",
-      review: "Aliqua id fugiat nostrud irure ex duis ea quis quis ad et. Sunt qui esse pariatur duis deserunt mollit dolore cillum minim tempor enim.",
-      rating: 4
+      rating: 5
     }, {
-      image:testimonialImage,
-      name: "Courtney Henry",
+      image:aakash,
+      name: "Aakash Tripathi",
       role: "Nursing Assistant",
       review: "Aliqua id fugiat nostrud irure ex duis ea quis quis ad et. Sunt qui esse pariatur duis deserunt mollit dolore cillum minim tempor enim.",
       rating: 4

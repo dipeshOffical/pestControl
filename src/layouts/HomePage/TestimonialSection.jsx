@@ -50,25 +50,6 @@ const TestimonialSection = () => {
             </SwiperSlide>
           ))}
         </Swiper>
-  
-        {/* <style jsx global>{`
-          .swiper-pagination-bullet {
-            width: 8px;
-            height: 8px;
-            background: #CBD5E1;
-            opacity: 1;
-          }
-          
-          .swiper-pagination-bullet-active {
-            background: #3B82F6;
-            transform: scale(1.2);
-          }
-          
-          .swiper-pagination {
-            position: relative;
-            margin-top: 2rem;
-          }
-        `}</style> */}
       </div>
     );
   };
