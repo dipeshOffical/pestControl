@@ -8,11 +8,11 @@ const BookingForm = () => {
         email: '',
         phone: '',
         address: '',
-        serviceType: '',
-        ServiceCategory: '',
-        propertyType: '',
-        preferredDate: '',
-        preferredTime: '',
+        // serviceType: '',
+        // ServiceCategory: '',
+        // propertyType: '',
+        // preferredDate: '',
+        // preferredTime: '',
         additionalInfo: '',
     });
     const [isCleaning, setIsCleaning] = useState(true)
@@ -43,11 +43,11 @@ const BookingForm = () => {
                             email: '',
                             phone: '',
                             address: '',
-                            serviceType: '',
-                            ServiceCategory: '',
-                            propertyType: '',
-                            preferredDate: '',
-                            preferredTime: '',
+                            // serviceType: '',
+                            // ServiceCategory: '',
+                            // propertyType: '',
+                            // preferredDate: '',
+                            // preferredTime: '',
                             additionalInfo: '',
                         });
                         setFormErrors({});
@@ -78,11 +78,11 @@ const BookingForm = () => {
         }
 
         if (!formData.address) errors.address = "Address is required.";
-        if (!formData.serviceType) errors.serviceType = "Service Type is required.";
-        if (!formData.ServiceCategory) errors.ServiceCategory = " ServiceCategory is required.";
-        if (!formData.propertyType) errors.propertyType = "Property Type is required.";
-        if (!formData.preferredDate) errors.preferredDate = "Preferred Date is required.";
-        if (!formData.preferredTime) errors.preferredTime = "Preferred Time is required.";
+        // if (!formData.serviceType) errors.serviceType = "Service Type is required.";
+        // if (!formData.ServiceCategory) errors.ServiceCategory = " ServiceCategory is required.";
+        // if (!formData.propertyType) errors.propertyType = "Property Type is required.";
+        // if (!formData.preferredDate) errors.preferredDate = "Preferred Date is required.";
+        // if (!formData.preferredTime) errors.preferredTime = "Preferred Time is required.";
 
         setFormErrors(errors);
         return Object.keys(errors).length === 0;
@@ -166,109 +166,6 @@ const BookingForm = () => {
                 </div>
 
 
-                <div className="mb-6">
-                    <label htmlFor="serviceCategory" className="block mb-2 text-sm font-medium text-gray-700">
-                        Service Category
-                    </label>
-                    <select
-                        id="serviceCategory"
-                        name="serviceCategory"
-                        value={formData.category}
-                        onChange={(e) => {
-                            const selectedCategory = e.target.value;
-                            handleInputChange(e);
-                            setIsCleaning(selectedCategory === "cleaning");
-                        }}
-                        className="w-full px-3 py-2 border bg-white border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                    >
-                        <option value="">Select Category</option>
-                        <option value="cleaning">Cleaning</option>
-                        <option value="pestControl">Pest Control</option>
-                    </select>
-                    {formErrors.category && <p className="text-red-500 text-xs">{formErrors.category}</p>}
-                </div>
-
-                <div className="mb-6">
-                    <label htmlFor="serviceType" className="block mb-2 text-sm font-medium text-gray-700">
-                        Service Type
-                    </label>
-                    <select
-                        id="serviceType"
-                        name="serviceType"
-                        value={formData.serviceType}
-                        onChange={handleInputChange}
-                        className="w-full px-3 py-2 border bg-white border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                    >
-                        <option value="">Select Service Type</option>
-                        {isCleaning ? (
-                            <>
-                                <option value="houseCleaning">House Cleaning</option>
-                                <option value="tilesCleaning">Tiles & Marble Cleaning and Polishing</option>
-                                <option value="floorCleaning">Floor Cleaning</option>
-                                <option value="sofaCleaning">Sofa Cleaning</option>
-                                <option value="carpetCleaning">Carpet and Galaicha Cleaning</option>
-                            </>
-                        ) : (
-                            <>
-                                <option value="spiderControl">Spider Control</option>
-                                <option value="rodentControl">Rodent/Mice Control</option>
-                                <option value="cockroachControl">Cockroach Control</option>
-                                <option value="generalPest">General Pest Management</option>
-                                <option value="bedbugTreatment">Bedbug Treatment</option>
-                            </>
-                        )}
-                    </select>
-                    {formErrors.serviceType && <p className="text-red-500 text-xs">{formErrors.serviceType}</p>}
-                </div>
-                        
-
-                <div className="mb-6">
-                    <label htmlFor="propertyType" className="block mb-2 text-sm font-medium text-gray-700">
-                        Property Type
-                    </label>
-                    <select
-                        id="propertyType"
-                        name="propertyType"
-                        value={formData.propertyType}
-                        onChange={handleInputChange}
-                        className="w-full px-3 py-2 border bg-white border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                    >
-                        <option value="">Select Property Type</option>
-                        <option value="option1">Domestic</option>
-                        <option value="option2">Commercial</option>
-                    </select>
-                    {formErrors.propertyType && <p className="text-red-500 text-xs">{formErrors.propertyType}</p>}
-                </div>
-
-                <div className="mb-6">
-                    <label htmlFor="preferredDate" className="block mb-2 text-sm font-medium text-gray-700">
-                        Preferred Date
-                    </label>
-                    <input
-                        type="date"
-                        id="preferredDate"
-                        name="preferredDate"
-                        value={formData.preferredDate}
-                        onChange={handleInputChange}
-                        className="w-full px-3 py-2 border bg-white border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                    />
-                    {formErrors.preferredDate && <p className="text-red-500 text-xs">{formErrors.preferredDate}</p>}
-                </div>
-
-                <div className="mb-6">
-                    <label htmlFor="preferredTime" className="block mb-2 text-sm font-medium text-gray-700">
-                        Preferred Time
-                    </label>
-                    <input
-                        type="time"
-                        id="preferredTime"
-                        name="preferredTime"
-                        value={formData.preferredTime}
-                        onChange={handleInputChange}
-                        className="w-full px-3 py-2 border bg-white border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                    />
-                    {formErrors.preferredTime && <p className="text-red-500 text-xs">{formErrors.preferredTime}</p>}
-                </div>
 
                 <div className="mb-6">
                     <label htmlFor="additionalInfo" className="block mb-2 text-sm font-medium text-gray-700">
