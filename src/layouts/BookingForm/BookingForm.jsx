@@ -169,7 +169,7 @@ const BookingForm = () => {
 
                 <div className="mb-6">
                     <label htmlFor="additionalInfo" className="block mb-2 text-sm font-medium text-gray-700">
-                        Additional Information
+                        Service Details
                     </label>
                     <textarea
                         id="additionalInfo"
@@ -178,7 +178,7 @@ const BookingForm = () => {
                         onChange={handleInputChange}
                         rows={3}
                         className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                        placeholder="Enter any additional information"
+                        placeholder="Mention pest issues, timing, or other requirements "
                     />
 
                 </div>
